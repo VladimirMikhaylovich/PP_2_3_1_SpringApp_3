@@ -1,10 +1,10 @@
-package web.dao;
+package web.service;
 
 import web.models.User;
 
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
 
     public User getUser(int id);
 
@@ -15,5 +15,4 @@ public interface UserDao {
     public void delete(int id);
 
     List<User> getAllUsers();
-
 }

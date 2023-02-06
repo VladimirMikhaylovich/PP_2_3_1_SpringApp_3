@@ -1,16 +1,28 @@
 package web.models;
 
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "lastname")
     private String lastname;
+    @Column(name = "age")
     private int age;
 
     public User() {
     }
 
-    public User(int id, String name, String lastname, int age) {
-        this.id = id;
+    public User(String name, String lastname, int age) {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
